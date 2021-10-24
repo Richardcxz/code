@@ -1,0 +1,75 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página Teste</title>
+</head>
+<body>
+    <input id="titu" type="text"/>
+    <h1></h1>
+    <button id="aopa" onclick="add()">Botão Teste</button>
+    <h1></h1>
+<script>
+
+    let o=0;
+    let z = new Array();
+    function add(){
+    o++;
+    let texto=document.getElementById('titu');
+    let texto2=texto.value;
+    let damn= document.createElement('div',id=z[o]);
+    
+    damn.innerText = texto2;
+    document.body.appendChild(damn);
+
+    /*const deletar = document.createElement('button');
+    deletar.innerText = 'Delete';
+    damn.appendChild(deletar);
+    deletar.onclick = function() {
+        console.log('teste!');
+    */
+    
+
+    }
+
+let a = ['chama1','chama2','chama3'];
+a1 = 'zzzchama1';
+a2 = 'zzzchama2';
+a3 = 'zzzchama3';
+
+
+let todoss;
+
+const salvando= JSON.parse(localStorage.getItem('todoss'));
+if(Array.isArray(salvando)){
+todoss=salvando;
+}else{
+a.forEach(function (titulo){
+let element = document.createElement('div');
+element.innerText = titulo+' each';
+document.body.appendChild(element);
+});
+}
+
+
+function teste2(title){
+let element = document.createElement('div');
+element.innerText = title;
+document.body.appendChild(element);
+salvar();
+}
+
+function salvar(){
+    localStorage.setItem('todoss', JSON.stringify(todoss));
+}
+</script>
+</body>
+<style>
+    body{
+    text-align: center;
+    background-color: rgb(179, 179, 179);
+    }
+
+</style>
+</html>
